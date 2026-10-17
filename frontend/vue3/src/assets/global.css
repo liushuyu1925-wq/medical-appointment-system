@@ -1,0 +1,932 @@
+/* 重置基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 设置根元素字体大小，方便使用 rem */
+html {
+  font-size: 16px;
+  background: #f5f8fc;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--glass-text-primary);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(126, 177, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 86% 4%, rgba(225, 239, 255, 0.92), transparent 28%),
+    linear-gradient(135deg, #f8fbff 0%, #eef4fb 48%, #f7f9fc 100%);
+  min-height: 100vh;
+}
+
+:root {
+  --glass-page-bg: #f5f8fc;
+  --glass-surface: rgba(255, 255, 255, 0.68);
+  --glass-surface-strong: rgba(255, 255, 255, 0.84);
+  --glass-surface-soft: rgba(247, 251, 255, 0.52);
+  --glass-border: rgba(255, 255, 255, 0.72);
+  --glass-border-strong: rgba(181, 204, 232, 0.48);
+  --glass-primary: #5d8df7;
+  --glass-primary-soft: rgba(93, 141, 247, 0.14);
+  --glass-primary-strong: #3f74e0;
+  --glass-cyan: #77bde8;
+  --glass-text-primary: #172033;
+  --glass-text-secondary: #5f7087;
+  --glass-text-muted: #8a98ab;
+  --glass-success: #4fb99f;
+  --glass-warning: #f0ac52;
+  --glass-danger: #f06f7a;
+  --glass-radius-lg: 22px;
+  --glass-radius-md: 16px;
+  --glass-radius-sm: 12px;
+  --glass-shadow: 0 18px 45px rgba(66, 92, 129, 0.12);
+  --glass-shadow-soft: 0 10px 28px rgba(66, 92, 129, 0.09);
+  --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  --soft-blue: #78aef8;
+  --text-primary: var(--glass-text-primary);
+  --text-secondary: var(--glass-text-secondary);
+  --shadow-soft: var(--glass-shadow-soft);
+  --radius-large: var(--glass-radius-lg);
+  --radius-medium: var(--glass-radius-md);
+  --radius-small: var(--glass-radius-sm);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(93, 141, 247, 0.22);
+  color: var(--glass-text-primary);
+}
+
+/* 移除列表样式 */
+ul, ol {
+  list-style: none;
+}
+
+/* 移除链接下划线 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 图片默认样式 */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* 常用flex布局类 */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 文本溢出省略号 */
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 鼠标样式 */
+.pointer {
+  cursor: pointer;
+}
+
+/* 全站液态玻璃基底 */
+.frontend-layout,
+.backend-layout,
+.auth-container,
+.home-container,
+.doctor-page,
+.department-page,
+.appointment-page,
+.my-appointments-page,
+.profile-container,
+.notice-page,
+.statistics-container,
+.medical-record-page,
+.payment-container,
+.review-form,
+.review-list {
+  background: transparent !important;
+  color: var(--glass-text-primary) !important;
+}
+
+.main-content,
+.content-container {
+  background:
+    radial-gradient(circle at 12% 4%, rgba(132, 184, 255, 0.16), transparent 26%),
+    radial-gradient(circle at 90% 12%, rgba(255, 255, 255, 0.82), transparent 24%),
+    linear-gradient(135deg, rgba(248, 251, 255, 0.92), rgba(238, 244, 251, 0.92)) !important;
+}
+
+.content-container {
+  padding: 28px 32px !important;
+}
+
+.glass-panel,
+.el-card,
+.box-card,
+.profile-card,
+.notice-card,
+.appointments-card,
+.selection-card,
+.schedule-card,
+.records-card,
+.health-tips-card,
+.welcome-card,
+.info-card,
+.password-card,
+.doctor-card,
+.appointment-card,
+.record-card,
+.service-card,
+.guide-section,
+.filter-container,
+.search-container,
+.search-form,
+.stat-card,
+.table-col {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(248, 251, 255, 0.48)) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius-lg) !important;
+  box-shadow: var(--glass-shadow-soft), var(--glass-inset) !important;
+  backdrop-filter: blur(22px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(145%) !important;
+}
+
+.el-card {
+  overflow: hidden !important;
+}
+
+.el-card__body {
+  padding: 24px 26px !important;
+}
+
+.el-card__header {
+  padding: 18px 26px !important;
+}
+
+.el-card:hover,
+.box-card:hover,
+.profile-card:hover,
+.notice-card:hover,
+.appointments-card:hover,
+.selection-card:hover,
+.schedule-card:hover,
+.records-card:hover,
+.health-tips-card:hover,
+.welcome-card:hover,
+.info-card:hover,
+.password-card:hover,
+.doctor-card:hover,
+.appointment-card:hover,
+.record-card:hover,
+.service-card:hover,
+.stat-card:hover {
+  box-shadow: var(--glass-shadow), var(--glass-inset) !important;
+}
+
+.el-card__header {
+  border-bottom: 1px solid rgba(181, 204, 232, 0.32) !important;
+  color: var(--glass-text-primary) !important;
+}
+
+.mb-4 {
+  margin-bottom: 24px !important;
+}
+
+.mr-1 {
+  margin-right: 4px !important;
+}
+
+.mr-2 {
+  margin-right: 8px !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.department-management,
+.doctor-management,
+.patient-management,
+.medicine-management,
+.medicine-category-management,
+.schedule-management,
+.appointment-management,
+.medical-record-management,
+.report-management,
+.prescription-management,
+.notice-management,
+.follow-up-management,
+.user-management,
+.statistics-container,
+.dashboard {
+  width: 100%;
+  min-width: 0;
+}
+
+.department-management > .el-card,
+.doctor-management > .el-card,
+.patient-management > .el-card,
+.medicine-management > .el-card,
+.medicine-category-management > .el-card,
+.schedule-management > .el-card,
+.appointment-management > .el-card,
+.medical-record-management > .el-card,
+.report-management > .el-card,
+.prescription-management > .el-card,
+.notice-management > .el-card,
+.follow-up-management > .el-card,
+.user-management > .el-card,
+.dashboard > .el-card {
+  margin-bottom: 24px !important;
+}
+
+.card-header,
+.section-header,
+.filter-header,
+.search-header,
+.tips-header,
+.appointment-header,
+.record-header,
+.department-header,
+.detail-header,
+.dialog-header,
+.welcome-header {
+  color: var(--glass-text-primary) !important;
+  gap: 14px;
+  min-width: 0;
+}
+
+.card-header {
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+.card-header h3,
+.section-title h2,
+.welcome-message h2,
+.banner-content h1,
+.banner-content h2,
+.header-content h3,
+.service-title,
+.doctor-name,
+.department-name,
+.record-title,
+.appointment-no,
+.profile-name {
+  color: var(--glass-text-primary) !important;
+  letter-spacing: 0 !important;
+}
+
+.section-title {
+  border-bottom-color: rgba(181, 204, 232, 0.34) !important;
+}
+
+.section-title h2::before,
+.section-header::before {
+  background: linear-gradient(180deg, var(--glass-primary), var(--glass-cyan)) !important;
+}
+
+.banner-section,
+.page-banner,
+.profile-banner,
+.notice-banner,
+.appointment-banner {
+  border-radius: var(--glass-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--glass-shadow-soft) !important;
+}
+
+.banner-text,
+.banner-content > div:not(.el-carousel),
+.banner-content .banner-text {
+  background: rgba(255, 255, 255, 0.64) !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  box-shadow: var(--glass-shadow-soft), var(--glass-inset) !important;
+  backdrop-filter: blur(24px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(145%) !important;
+}
+
+.service-icon,
+.header-icon,
+.section-icon,
+.avatar-container,
+.logo-icon {
+  color: var(--glass-primary) !important;
+}
+
+.el-button {
+  border-radius: 999px !important;
+  font-weight: 500 !important;
+  border-color: rgba(181, 204, 232, 0.52) !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+  color: var(--glass-text-primary) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease !important;
+}
+
+.el-button:hover,
+.el-button:focus {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.76) !important;
+  border-color: rgba(93, 141, 247, 0.34) !important;
+  color: var(--glass-primary-strong) !important;
+  box-shadow: 0 10px 24px rgba(66, 92, 129, 0.1), var(--glass-inset) !important;
+}
+
+.el-button--primary {
+  background: linear-gradient(135deg, #76a7ff, var(--glass-primary)) !important;
+  border-color: rgba(93, 141, 247, 0.62) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 24px rgba(93, 141, 247, 0.24), var(--glass-inset) !important;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background: linear-gradient(135deg, #8bb7ff, var(--glass-primary-strong)) !important;
+  color: #ffffff !important;
+}
+
+.el-button--danger {
+  background: rgba(240, 111, 122, 0.1) !important;
+  border-color: rgba(240, 111, 122, 0.32) !important;
+  color: #d84d5a !important;
+}
+
+.el-button--success {
+  background: rgba(79, 185, 159, 0.12) !important;
+  border-color: rgba(79, 185, 159, 0.34) !important;
+  color: #25866f !important;
+}
+
+.search-form {
+  padding: 18px 20px !important;
+  margin-bottom: 24px !important;
+}
+
+.search-form.el-form--inline {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 14px 18px !important;
+}
+
+.search-form.el-form--inline .el-form-item {
+  margin: 0 !important;
+}
+
+.search-form .el-input,
+.search-form .el-select,
+.search-form .el-date-editor {
+  min-width: 180px;
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner,
+.el-date-editor.el-input__wrapper {
+  background: rgba(255, 255, 255, 0.58) !important;
+  border-radius: var(--glass-radius-sm) !important;
+  box-shadow: 0 0 0 1px rgba(181, 204, 232, 0.44) inset, var(--glass-inset) !important;
+  backdrop-filter: blur(16px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(135%) !important;
+}
+
+.el-input__wrapper:hover,
+.el-select__wrapper:hover,
+.el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px rgba(93, 141, 247, 0.38) inset, var(--glass-inset) !important;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px rgba(93, 141, 247, 0.78) inset, 0 0 0 4px rgba(93, 141, 247, 0.12), var(--glass-inset) !important;
+}
+
+.el-input__inner,
+.el-textarea__inner,
+.el-select__placeholder,
+.el-form-item__label {
+  color: var(--glass-text-primary) !important;
+}
+
+.el-input__inner::placeholder,
+.el-textarea__inner::placeholder {
+  color: var(--glass-text-muted) !important;
+}
+
+.el-table {
+  background: transparent !important;
+  color: var(--glass-text-primary) !important;
+  border-radius: var(--glass-radius-md) !important;
+  overflow: visible !important;
+  margin-top: 2px;
+}
+
+.el-table__inner-wrapper {
+  border-radius: var(--glass-radius-md) !important;
+}
+
+.el-table__header-wrapper,
+.el-table__body-wrapper {
+  overflow-x: hidden !important;
+}
+
+.el-table .el-scrollbar__wrap {
+  overflow-x: auto !important;
+}
+
+.el-table__inner-wrapper::before,
+.el-table--border::after,
+.el-table--border::before {
+  background-color: rgba(181, 204, 232, 0.24) !important;
+}
+
+.el-table th.el-table__cell,
+.el-table td.el-table__cell {
+  padding: 14px 0 !important;
+  vertical-align: top !important;
+}
+
+.el-table th.el-table__cell {
+  background: rgba(245, 249, 255, 0.82) !important;
+  color: var(--glass-text-secondary) !important;
+  font-weight: 600 !important;
+}
+
+.el-table tr,
+.el-table td.el-table__cell {
+  background: rgba(255, 255, 255, 0.34) !important;
+  border-bottom-color: rgba(181, 204, 232, 0.24) !important;
+}
+
+.el-table__row:hover > td.el-table__cell {
+  background: rgba(93, 141, 247, 0.08) !important;
+}
+
+.el-table .cell {
+  line-height: 1.55 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow: visible !important;
+}
+
+.el-table .cell:has(.el-button) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.el-table .cell:has(.el-button) .el-button,
+.el-table .cell:has(.el-button) .el-popconfirm {
+  margin: 0 !important;
+}
+
+.el-table .el-button + .el-button {
+  margin-left: 0 !important;
+}
+
+.el-table .el-button--small {
+  min-width: 48px !important;
+  height: 30px !important;
+  padding: 0 12px !important;
+}
+
+.el-table th.el-table__cell.el-table-fixed-column--right,
+.el-table td.el-table__cell.el-table-fixed-column--right,
+.el-table th.el-table__cell.el-table-fixed-column--left,
+.el-table td.el-table__cell.el-table-fixed-column--left,
+.el-table .el-table__fixed-right,
+.el-table .el-table__fixed {
+  background: #f8fbff !important;
+  background-color: #f8fbff !important;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 255, 0.96)) !important;
+  backdrop-filter: blur(18px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+  background-clip: padding-box !important;
+}
+
+.el-table__row:hover > td.el-table__cell.el-table-fixed-column--right,
+.el-table__row:hover > td.el-table__cell.el-table-fixed-column--left {
+  background: #f2f7ff !important;
+  background-color: #f2f7ff !important;
+  background-image: linear-gradient(135deg, rgba(248, 251, 255, 0.98), rgba(235, 243, 255, 0.98)) !important;
+}
+
+.el-table th.el-table__cell.el-table-fixed-column--right,
+.el-table td.el-table__cell.el-table-fixed-column--right {
+  box-shadow: -10px 0 22px rgba(116, 147, 184, 0.12) !important;
+}
+
+.el-dialog,
+.el-message-box,
+.el-popper,
+.el-dropdown__popper .el-dropdown-menu {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius-lg) !important;
+  box-shadow: var(--glass-shadow) !important;
+  backdrop-filter: blur(28px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(150%) !important;
+}
+
+.el-dialog__header,
+.el-dialog__footer {
+  border-color: rgba(181, 204, 232, 0.3) !important;
+}
+
+.el-dialog__title,
+.el-message-box__title {
+  color: var(--glass-text-primary) !important;
+}
+
+.el-tag {
+  border-radius: 999px !important;
+  border-color: transparent !important;
+  background: rgba(93, 141, 247, 0.12) !important;
+  color: var(--glass-primary-strong) !important;
+}
+
+.el-tag--success {
+  background: rgba(79, 185, 159, 0.14) !important;
+  color: #21836c !important;
+}
+
+.el-tag--warning {
+  background: rgba(240, 172, 82, 0.16) !important;
+  color: #a66a1f !important;
+}
+
+.el-tag--danger {
+  background: rgba(240, 111, 122, 0.14) !important;
+  color: #c94e59 !important;
+}
+
+.el-pagination.is-background .el-pager li,
+.el-pagination.is-background button {
+  background: rgba(255, 255, 255, 0.58) !important;
+  border: 1px solid rgba(181, 204, 232, 0.34) !important;
+  border-radius: 10px !important;
+  color: var(--glass-text-secondary) !important;
+}
+
+.el-pagination.is-background .el-pager li.is-active {
+  background: linear-gradient(135deg, #76a7ff, var(--glass-primary)) !important;
+  color: #ffffff !important;
+}
+
+.el-tabs__item.is-active,
+.el-menu-item.is-active,
+a:hover {
+  color: var(--glass-primary-strong) !important;
+}
+
+.el-overlay {
+  background-color: rgba(19, 31, 49, 0.26) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.pagination-container,
+.guide-action {
+  margin-top: 22px !important;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+/* 统一前台页面中的局部组件样式 */
+body .welcome-banner.welcome-banner {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.74), rgba(232, 241, 255, 0.46)),
+    radial-gradient(circle at 18% 18%, rgba(93, 141, 247, 0.16), transparent 36%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius-lg) !important;
+  box-shadow: var(--glass-shadow-soft), var(--glass-inset) !important;
+  backdrop-filter: blur(24px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(145%) !important;
+}
+
+body .banner-content.banner-content h2,
+body .banner-content.banner-content h3,
+body .card-header-custom.card-header-custom h3,
+body .doctor-info.doctor-info h3,
+body .doctor-details.doctor-details h4,
+body .list-header.list-header h4,
+body .patient-header.patient-header h3 {
+  color: var(--glass-text-primary) !important;
+}
+
+body .banner-content.banner-content p,
+body .department.department,
+body .doctor-expertise.doctor-expertise,
+body .doctor-title.doctor-title,
+body .step-name.step-name,
+body .el-tabs__item.el-tabs__item,
+body .patient-info .el-descriptions__label {
+  color: var(--glass-text-secondary) !important;
+}
+
+body .banner-content.banner-content h2 .el-icon,
+body .list-header.list-header .el-icon,
+body .empty-icon.empty-icon,
+body .info-with-icon.info-with-icon .el-icon,
+body .el-tabs__item.el-tabs__item.is-active {
+  color: var(--glass-primary-strong) !important;
+}
+
+body .department-list.department-list,
+body .filter-container.filter-container,
+body .avatar-container.avatar-container,
+body .patient-info .el-descriptions__label {
+  background: rgba(255, 255, 255, 0.48) !important;
+  border: 1px solid rgba(181, 204, 232, 0.32) !important;
+  border-radius: var(--glass-radius-md) !important;
+}
+
+body .header-icon.header-icon,
+body .section-icon.section-icon,
+body .doctor-title.doctor-title,
+body .step.completed .step-number,
+body .step-number.step-number {
+  background: rgba(93, 141, 247, 0.12) !important;
+  color: var(--glass-primary-strong) !important;
+}
+
+body .header-icon.header-icon .el-icon,
+body .section-icon.section-icon .el-icon {
+  color: var(--glass-primary-strong) !important;
+}
+
+body .dept-button.dept-button,
+body .date-item.date-item,
+body .time-slot.time-slot,
+body .doctor-card.doctor-card,
+body .record-item.record-item,
+body .notice-item.notice-item {
+  background: rgba(255, 255, 255, 0.54) !important;
+  border: 1px solid rgba(181, 204, 232, 0.34) !important;
+  color: var(--glass-text-secondary) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+body .dept-button.dept-button:hover,
+body .date-item.date-item:hover,
+body .time-slot.time-slot:hover,
+body .doctor-card.doctor-card:hover {
+  background: rgba(93, 141, 247, 0.08) !important;
+  color: var(--glass-text-primary) !important;
+}
+
+body .dept-active.dept-active,
+body .doctor-active.doctor-active,
+body .date-active.date-active,
+body .time-slot.active,
+body .selected.selected {
+  background: rgba(93, 141, 247, 0.14) !important;
+  border-color: rgba(93, 141, 247, 0.42) !important;
+  color: var(--glass-primary-strong) !important;
+  box-shadow: 0 0 0 2px rgba(93, 141, 247, 0.12) !important;
+}
+
+body .el-tabs__active-bar.el-tabs__active-bar {
+  background-color: var(--glass-primary) !important;
+}
+
+body .avatar-uploader.avatar-uploader .el-button,
+body .info-form.info-form .el-button,
+body .empty-info.empty-info .el-button,
+body .doctor-action.doctor-action .el-button--primary,
+body .search-form.search-form .el-button--primary {
+  background: linear-gradient(135deg, #76a7ff, var(--glass-primary)) !important;
+  border-color: rgba(93, 141, 247, 0.62) !important;
+  color: #ffffff !important;
+}
+
+.page-glass-hero,
+.payment-card-header,
+.review-list-header,
+.review-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-glass-hero,
+body .profile-container .welcome-banner,
+body .notice-page .welcome-banner,
+body .department-page .welcome-banner,
+body .my-medical-records .welcome-banner {
+  padding: 26px 30px !important;
+}
+
+.payment-shell,
+.review-panel,
+.review-entry,
+.not-found .content {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(248, 251, 255, 0.5)) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius-lg) !important;
+  box-shadow: var(--glass-shadow-soft), var(--glass-inset) !important;
+  backdrop-filter: blur(22px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(145%) !important;
+}
+
+.review-section-label,
+.payment-section-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--glass-text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.review-muted,
+.payment-muted,
+.not-found p {
+  color: var(--glass-text-secondary) !important;
+}
+
+.review-stars span {
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.review-stars span:hover {
+  transform: translateY(-1px);
+}
+
+.glass-text-block {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(181, 204, 232, 0.3);
+  border-radius: var(--glass-radius-md);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.glass-subtle-divider {
+  border-color: rgba(181, 204, 232, 0.24) !important;
+}
+
+body .doctor-page .box-card,
+body .appointment-page .selection-card,
+body .appointment-page .schedule-card,
+body .appointment-page .health-tips-card,
+body .my-appointments-page .appointments-card,
+body .my-appointments-page .health-tips-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(248, 251, 255, 0.48)) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow-soft), var(--glass-inset) !important;
+}
+
+body .doctor-page .filter-container,
+body .appointment-page .filter-container,
+body .appointment-page .department-list,
+body .appointment-page .doctor-card,
+body .appointment-page .schedule-item,
+body .appointment-page .notice-box,
+body .my-appointments-page .filter-container,
+body .my-appointments-page .appointment-card,
+body .my-appointments-page .notice-box,
+body .doctor-page .doctor-profile,
+body .doctor-page .review-stats,
+body .doctor-page .schedule-legend {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(181, 204, 232, 0.3) !important;
+  border-radius: var(--glass-radius-md) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+body .doctor-page .doctor-card:hover,
+body .doctor-page .schedule-card:hover,
+body .appointment-page .doctor-card:hover,
+body .appointment-page .schedule-item:hover,
+body .my-appointments-page .appointment-card:hover {
+  box-shadow: var(--glass-shadow) !important;
+  transform: translateY(-3px) !important;
+}
+
+body .doctor-page .stat-item,
+body .appointment-page .summary-icon,
+body .appointment-page .step.completed .step-number,
+body .my-appointments-page .filter-icon {
+  background: rgba(93, 141, 247, 0.12) !important;
+  color: var(--glass-primary-strong) !important;
+}
+
+body .doctor-page .schedule-time,
+body .appointment-page .doctor-title,
+body .appointment-page .dept-active,
+body .appointment-page .doctor-active,
+body .appointment-page .highlight-schedule,
+body .my-appointments-page .new-appointment-btn {
+  background: rgba(93, 141, 247, 0.12) !important;
+  color: var(--glass-primary-strong) !important;
+  border-color: rgba(93, 141, 247, 0.34) !important;
+  box-shadow: none !important;
+}
+
+body .doctor-page .schedule-card.available,
+body .doctor-page .schedule-card.almost-full,
+body .doctor-page .schedule-card.full,
+body .doctor-page .schedule-card.stopped {
+  background: rgba(255, 255, 255, 0.52) !important;
+}
+
+body .doctor-page .schedule-card.almost-full .schedule-time {
+  background: rgba(240, 172, 82, 0.14) !important;
+  color: #a66a1f !important;
+}
+
+body .doctor-page .schedule-card.full .schedule-time,
+body .doctor-page .schedule-card.stopped .schedule-time {
+  background: rgba(240, 111, 122, 0.12) !important;
+  color: #c94e59 !important;
+}
+
+body .doctor-page .section-header,
+body .my-appointments-page .appointment-header,
+body .appointment-page .card-header-custom,
+body .doctor-page .schedule-card-header {
+  border-bottom: 1px solid rgba(181, 204, 232, 0.24) !important;
+}
+
+body .doctor-page .section-header .el-icon,
+body .doctor-page .stat-item .el-icon,
+body .appointment-page .summary-icon .el-icon,
+body .my-appointments-page .filter-icon .el-icon,
+body .my-appointments-page .appointment-title .el-icon,
+body .my-appointments-page .content-item .el-icon {
+  color: var(--glass-primary-strong) !important;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 18px 14px !important;
+  }
+
+  .el-card,
+  .box-card,
+  .profile-card,
+  .notice-card,
+  .appointments-card,
+  .selection-card,
+  .schedule-card,
+  .records-card,
+  .health-tips-card {
+    border-radius: 18px !important;
+  }
+
+  .el-card__body {
+    padding: 18px !important;
+  }
+
+  .el-card__header {
+    padding: 16px 18px !important;
+  }
+
+  .pagination-container {
+    justify-content: flex-start;
+  }
+
+  .page-glass-hero,
+  body .profile-container .welcome-banner,
+  body .notice-page .welcome-banner,
+  body .department-page .welcome-banner,
+  body .my-medical-records .welcome-banner {
+    padding: 20px !important;
+  }
+}

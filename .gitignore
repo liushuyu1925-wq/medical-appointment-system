@@ -1,0 +1,17 @@
+**/node_modules/
+**/dist/
+**/target/
+**/.idea/
+**/.vscode/
+**/.env
+**/.env.*
+**/application.properties
+**/application-local.properties
+**/files/
+*.log
+*.zip
+*.db
+*.sqlite*
+*.doc*
+*.ppt*
+*.pdf
